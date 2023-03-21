@@ -9,6 +9,9 @@ RUN useradd -ms /bin/bash user && \
     echo "user:password" | chpasswd&& \
     echo "user ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
+RUN apt install -y blt libtcl8.6 libtk8.6 libxft2 libxss1 python3-tk tk8.6-blt2.5 x11-common blt-demo tcl8.6 tk8.6 tix python3-tk-dbg libxrender1
+
+
 RUN mkdir /home/user/kohya_ss && \
     chown -R user:user /home/user/kohya_ss && \
     chmod -R +rwx /home/user/kohya_ss
